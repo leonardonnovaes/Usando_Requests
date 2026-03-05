@@ -12,7 +12,7 @@ class DadosRepositorios:
         self.api_base_url = 'https://api.github.com'
         
         # Token de autenticação (melhor usar variável de ambiente em produção)
-        self.access_token = 'seu_Token'
+        self.access_token = 'seutoken'
         
         # Headers da requisição (necessário para autenticação e versão da API)
         self.headers = {
@@ -84,7 +84,7 @@ class DadosRepositorios:
         
         return repo_languages
 
-    def cria_df_linguagnes(self):
+    def cria_df_linguagens(self):
         """
         Cria um DataFrame contendo:
         - Nome do repositório
@@ -112,18 +112,32 @@ class DadosRepositorios:
 # ===============================
 # Criando objetos para empresas
 # ===============================
-
-# Amazon (usuário oficial no GitHub)
+# Amazo
 amazon_rep = DadosRepositorios('amzn')
-ling_mais_usadas_amzn = amazon_rep.cria_df_linguagnes()
+ling_mais_usadas_amzn = amazon_rep.cria_df_linguagens()
 
 # Netflix
 netflix_rep = DadosRepositorios('netflix')
-ling_mais_usadas_netflix = netflix_rep.cria_df_linguagnes()
+ling_mais_usadas_netflix = netflix_rep.cria_df_linguagens()
 
 # Spotify
 spotify_rep = DadosRepositorios('spotify')
-ling_mais_usadas_spotify = spotify_rep.cria_df_linguagnes()
+ling_mais_usadas_spotify = spotify_rep.cria_df_linguagens()
+# IBM
+ibm_rep = DadosRepositorios('IBM')
+ling_mais_usadas_ibm = ibm_rep.cria_df_linguagens()
+# Totvs
+totvs_rep = DadosRepositorios('totvs')
+ling_mais_usadas_totvs = totvs_rep.cria_df_linguagens()
+# Accenture
+accenture_rep = DadosRepositorios('Accenture')
+ling_mais_usadas_accenture = accenture_rep.cria_df_linguagens()
+# Facebook
+facebook_rep = DadosRepositorios('facebook')
+ling_mais_usadas_facebook = facebook_rep.cria_df_linguagens()
+# Oracle
+oracle_rep = DadosRepositorios('oracle')
+ling_mais_usadas_oracle = oracle_rep.cria_df_linguagens()
 
 # ===============================
 # Salvando os dados em CSV
@@ -133,3 +147,8 @@ ling_mais_usadas_spotify = spotify_rep.cria_df_linguagnes()
 ling_mais_usadas_amzn.to_csv('dados/linguagens_amazon.csv')
 ling_mais_usadas_netflix.to_csv('dados/linguagens_netflix.csv')
 ling_mais_usadas_spotify.to_csv('dados/linguagens_spotify.csv')
+ling_mais_usadas_ibm.to_csv('dados/linguagens_ibm.csv')
+ling_mais_usadas_totvs.to_csv('dados/linguagens_totvs.csv')
+ling_mais_usadas_accenture.to_csv('dados/linguagens_accenture.csv')
+ling_mais_usadas_facebook.to_csv('dados/linguagens_facebook.csv')
+ling_mais_usadas_oracle.to_csv('dados/linguagens_oracle.csv')
